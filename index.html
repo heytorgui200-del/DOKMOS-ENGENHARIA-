@@ -40,8 +40,8 @@
     <meta name="twitter:image" content="https://dokmosegenharia.com.br/og-image.jpg" />
 
     <!-- Security Headers (via meta tags for static hosting) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://connect.facebook.net; frame-src 'none'; base-uri 'self'; form-action 'self';">
-    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://connect.facebook.net; frame-src 'self' https://www.google.com https://maps.google.com https://www.google.com/maps; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()" />
@@ -167,12 +167,6 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Meta Pixel Code (Fallback para navegadores sem JavaScript) -->
-    <noscript>
-      <img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=1362520712382496&ev=PageView&noscript=1"
-      />
-    </noscript>
-    <!-- End Meta Pixel Code -->
     <noscript>
       <img height="1" width="1" style="display:none"
         src="https://www.facebook.com/tr?id=1362520712382496&ev=PageView&noscript=1"
