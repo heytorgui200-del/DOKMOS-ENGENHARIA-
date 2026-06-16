@@ -1,0 +1,6 @@
+name = "dokmosegenharia"
+compatibility_date = "2026-06-16"
+
+# Cloudflare Pages configuration
+[site]
+bucket = "."
