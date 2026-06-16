@@ -1,0 +1,60 @@
+<!-- COOKIE BANNER - Inserir no final do <body> do index.html -->
+<div id="cookie-banner" role="dialog" aria-label="Consentimento de Cookies" aria-describedby="cookie-banner-desc" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a1a;color:#fff;padding:20px;z-index:9999;font-family:Montserrat,sans-serif;box-shadow:0 -4px 20px rgba(0,0,0,0.3);border-top:3px solid #ffc107;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+    <div style="flex:1;min-width:280px;">
+      <h3 style="margin:0 0 10px;font-size:1.1rem;color:#ffc107;">🍪 Cookies e Privacidade</h3>
+      <p id="cookie-banner-desc" style="margin:0;font-size:0.9rem;line-height:1.5;color:#e2e8f0;">
+        Utilizamos cookies para melhorar sua experiência, analisar tráfego e personalizar conteúdo.
+        <a href="politica-cookies.html" style="color:#ffc107;text-decoration:underline;" target="_blank">Saiba mais</a>
+      </p>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+      <button onclick="cookieBanner.openPreferences()" style="padding:10px 20px;background:#333;color:#fff;border:1px solid #555;border-radius:5px;cursor:pointer;font-family:Montserrat,sans-serif;font-size:0.9rem;transition:background 0.3s;">⚙️ Personalizar</button>
+      <button onclick="cookieBanner.rejectAll()" style="padding:10px 20px;background:#333;color:#fff;border:1px solid #555;border-radius:5px;cursor:pointer;font-family:Montserrat,sans-serif;font-size:0.9rem;transition:background 0.3s;">Rejeitar</button>
+      <button onclick="cookieBanner.acceptAll()" style="padding:10px 20px;background:#ffc107;color:#000;border:none;border-radius:5px;cursor:pointer;font-family:Montserrat,sans-serif;font-size:0.9rem;font-weight:600;transition:background 0.3s;">✅ Aceitar Tudo</button>
+    </div>
+  </div>
+</div>
+
+<!-- COOKIE PREFERENCES MODAL -->
+<div id="cookie-preferences" role="dialog" aria-label="Preferências de Cookies" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);z-index:10000;justify-content:center;align-items:center;">
+  <div style="background:#fff;padding:30px;border-radius:12px;max-width:500px;width:90%;max-height:80vh;overflow-y:auto;box-shadow:0 10px 40px rgba(0,0,0,0.3);">
+    <h2 style="margin:0 0 20px;color:#1a365d;font-size:1.5rem;">Preferências de Cookies</h2>
+    <p style="color:#718096;margin-bottom:20px;">Escolha quais tipos de cookie deseja permitir:</p>
+    
+    <div style="border:1px solid #e2e8f0;border-radius:8px;padding:15px;margin-bottom:15px;background:#f7fafc;">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <h4 style="margin:0 0 5px;color:#1a365d;">🔐 Essenciais (Sempre Ativos)</h4>
+          <p style="margin:0;font-size:0.85rem;color:#718096;">Necessários para o site funcionar</p>
+        </div>
+        <input type="checkbox" checked disabled style="width:24px;height:24px;cursor:pointer;">
+      </div>
+    </div>
+    
+    <div style="border:1px solid #e2e8f0;border-radius:8px;padding:15px;margin-bottom:15px;" id="analytics-option">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <h4 style="margin:0 0 5px;color:#1a365d;">📊 Analíticos</h4>
+          <p style="margin:0;font-size:0.85rem;color:#718096;">Google Analytics - entender como você usa o site</p>
+        </div>
+        <input type="checkbox" id="analytics-checkbox" style="width:24px;height:24px;cursor:pointer;">
+      </div>
+    </div>
+    
+    <div style="border:1px solid #e2e8f0;border-radius:8px;padding:15px;margin-bottom:20px;" id="marketing-option">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <h4 style="margin:0 0 5px;color:#1a365d;">📢 Marketing (Meta Pixel)</h4>
+          <p style="margin:0;font-size:0.85rem;color:#718096;">Retargeting e medição de anúncios</p>
+        </div>
+        <input type="checkbox" id="marketing-checkbox" style="width:24px;height:24px;cursor:pointer;">
+      </div>
+    </div>
+    
+    <div style="display:flex;gap:10px;justify-content:flex-end;">
+      <button onclick="cookieBanner.closePreferences()" style="padding:10px 20px;background:#f7fafc;border:1px solid #e2e8f0;border-radius:5px;cursor:pointer;color:#2d3748;font-family:Montserrat,sans-serif;">← Voltar</button>
+      <button onclick="cookieBanner.savePreferences()" style="padding:10px 20px;background:#1a365d;color:#fff;border:none;border-radius:5px;cursor:pointer;font-family:Montserrat,sans-serif;">✅ Salvar</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+# SPA redirects for React Router
+# This file is used by Netlify and Vercel
+
+# Redirect all routes to index.html for SPA routing
+/*    /index.html   200
