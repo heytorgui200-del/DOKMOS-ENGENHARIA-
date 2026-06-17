@@ -173,8 +173,8 @@
       />
     </noscript>
     <!-- End Meta Pixel Code -->
-    <!-- GOOGLE MAPS - SEÇÃO CONTATO -->
-    <div id="google-maps-section" style="width:100%; max-width:1200px; margin:40px auto; padding:0 20px;">
+    <!-- GOOGLE MAPS - SEÇÃO CONTATO (Só aparece em /contatos) -->
+    <div id="google-maps-wrapper" style="display:none; width:100%; max-width:1200px; margin:40px auto; padding:0 20px;">
       <h2 style="text-align:center; color:#1a365d; font-family:Montserrat,sans-serif; margin-bottom:20px;">Localização</h2>
       <p style="text-align:center; color:#2d3748; font-family:Inter,sans-serif; margin-bottom:20px;">
         Avenida Maria de Jesus Condeixa, 655 - Jardim Palma Travassos, Ribeirão Preto - SP
@@ -189,5 +189,30 @@
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
+    <!-- Script para mostrar mapa SOMENTE em /contatos -->
+    <script>
+      (function() {
+        var mapWrapper = document.getElementById('google-maps-wrapper');
+        if (!mapWrapper) return;
+
+        function checkRoute() {
+          var path = window.location.pathname;
+          if (path === '/contatos') {
+            mapWrapper.style.display = 'block';
+          } else {
+            mapWrapper.style.display = 'none';
+          }
+        }
+
+        // Verifica na carga inicial
+        checkRoute();
+
+        // Escuta mudanças de rota (para SPA)
+        window.addEventListener('popstate', checkRoute);
+        
+        // Verifica periodicamente em caso de navegação programática do React Router
+        setInterval(checkRoute, 500);
+      })();
+    </script>
   </body>
 </html>
