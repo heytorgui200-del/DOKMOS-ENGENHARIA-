@@ -117,6 +117,46 @@
     <!-- Facebook Domain Verification -->
     <meta name="facebook-domain-verification" content="dnp831ikogbiuck0p6lf79pvhns1yn" />
 
+    <!-- Meta Pixel Events -->
+    <script>
+    (function(){
+      if(typeof fbq==='undefined')return;
+
+      document.addEventListener('click',function(e){
+        var el=e.target.closest('a,button');
+        if(!el)return;
+        var href=(el.getAttribute('href')||'').toLowerCase();
+        var text=(el.textContent||'').toLowerCase();
+        if(href.indexOf('wa.me/')!==-1||href.indexOf('whatsapp')!==-1||href.indexOf('tel:')!==-1||text.indexOf('whatsapp')!==-1||text.indexOf('ligar')!==-1||text.indexOf('telefone')!==-1){
+          fbq('track','Contact',{content_name:'WhatsApp/Telefone'});
+        }
+      });
+
+      document.addEventListener('submit',function(e){
+        var form=e.target;
+        if(form.tagName!=='FORM')return;
+        var inputs=form.querySelectorAll('input[type="email"],input[type="tel"],input[name*="email"],input[name*="phone"],input[name*="telefone"],textarea');
+        if(inputs.length>0){
+          fbq('track','Lead',{content_name:form.getAttribute('action')||window.location.pathname});
+        }
+      });
+
+      var lastPath=location.pathname;
+      function trackViewContent(){
+        if(location.pathname!==lastPath){
+          lastPath=location.pathname;
+          fbq('track','ViewContent',{content_name:location.pathname,content_type:'page'});
+        }
+      }
+      window.addEventListener('popstate',trackViewContent);
+      var _pushState=history.pushState;
+      history.pushState=function(){_pushState.apply(this,arguments);trackViewContent();};
+      var _replaceState=history.replaceState;
+      history.replaceState=function(){_replaceState.apply(this,arguments);trackViewContent();};
+      setInterval(trackViewContent,1000);
+    })();
+    </script>
+
     <!-- React application entry -->
     <script type="module" crossorigin src="./assets/index-apQld7ti.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-CKxRnr72.css">
