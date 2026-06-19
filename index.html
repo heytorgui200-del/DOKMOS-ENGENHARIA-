@@ -17,9 +17,11 @@
     <link rel="canonical" href="https://dokmosegenharia.com.br/" />
 
     <link rel="alternate" hreflang="pt-br" href="https://dokmosegenharia.com.br/" />
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -94,6 +96,27 @@
     }
     </script>
 
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1362520712382496');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1362520712382496&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Facebook Domain Verification -->
+    <meta name="facebook-domain-verification" content="dnp831ikogbiuck0p6lf79pvhns1yn" />
+
     <!-- React application entry -->
     <script type="module" crossorigin src="./assets/index-apQld7ti.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-CKxRnr72.css">
@@ -166,13 +189,6 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-15086467112"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- Meta Pixel Code (Fallback para navegadores sem JavaScript) -->
-    <noscript>
-      <img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=1362520712382496&ev=PageView&noscript=1"
-      />
-    </noscript>
-    <!-- End Meta Pixel Code -->
     <!-- GOOGLE MAPS - SEÇÃO CONTATO (Só aparece em /contatos) -->
     <div id="google-maps-wrapper" style="display:none; width:100%; max-width:1200px; margin:40px auto; padding:0 20px;">
       <h2 style="text-align:center; color:#1a365d; font-family:Montserrat,sans-serif; margin-bottom:20px;">Localização</h2>

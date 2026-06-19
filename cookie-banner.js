@@ -8,7 +8,7 @@
 
   const CONSENT_KEY = 'dokmos_cookie_consent_v1';
 
-  let consentData = { essential: true, analytics: false, marketing: false, timestamp: null };
+  let consentData = { essential: true, analytics: false, timestamp: null };
 
   function getStoredConsent() {
     try { const s = localStorage.getItem(CONSENT_KEY); if (s) return JSON.parse(s); } catch (e) {}
@@ -52,26 +52,11 @@
     })(window, document, 'script', 'dataLayer', '15086467112');
   }
 
-  function loadMetaPixel() {
-    if (window.fbq) return;
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    window.fbq('init', '1362520712382496');  // Meta Pixel ID - DOKMOS ENGENHARIA
-    window.fbq('track', 'PageView');
-  }
-
   function loadScripts() {
     if (consentData.analytics) {
       loadGoogleAnalytics();
       loadGoogleTagManager();
     }
-    if (consentData.marketing) loadMetaPixel();
   }
 
   function createBanner() {
@@ -103,12 +88,12 @@
   }
 
   function handleAccept() {
-    consentData.analytics = true; consentData.marketing = true;
+    consentData.analytics = true;
     consentData.timestamp = new Date().toISOString();
     saveConsent(consentData); loadScripts(); hideBanner();
   }
   function handleReject() {
-    consentData.analytics = false; consentData.marketing = false;
+    consentData.analytics = false;
     consentData.timestamp = new Date().toISOString();
     saveConsent(consentData); hideBanner();
   }
