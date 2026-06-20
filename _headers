@@ -2,3 +2,27 @@
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=604800
+
+/*.jpg
+  Cache-Control: public, max-age=604800
+
+/*.mp4
+  Cache-Control: public, max-age=604800
+
+/favicon_io/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/politica-privacidade.html
+  Cache-Control: public, max-age=86400
+
+/politica-cookies.html
+  Cache-Control: public, max-age=86400
+
+/termos-de-servico.html
+  Cache-Control: public, max-age=86400

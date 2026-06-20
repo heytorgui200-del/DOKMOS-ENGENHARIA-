@@ -41,25 +41,23 @@
     <meta name="twitter:description" content="DOKMOS ENGENHARIA em Ribeirão Preto - SP: soluções técnicas, laudos periciais, engenharia regulatória e consultoria. Atendemos SP, MG e região." />
     <meta name="twitter:image" content="https://dokmosegenharia.com.br/og-image.jpg" />
 
-    <!-- Security Headers (via meta tags for static hosting) -->
+    <!-- Security Headers -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://connect.facebook.net https://formsubmit.co https://static.cloudflareinsights.com https://cloudflareinsights.com; frame-src 'self' https://www.google.com https://maps.google.com https://www.google.com/maps; base-uri 'self'; form-action 'self';">
-    <!-- X-Frame-Options e X-Content-Type-Options devem ser definidos via HTTP headers -->
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()" />
 
-    <!-- Google Fonts (preconnect + preload for performance) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
-
-    <!-- Schema.org JSON-LD (LocalBusiness) -->
+    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "DOKMOS ENGENHARIA",
-      "description": "Engenharia estratégica para operações que não podem parar. Soluções técnicas, regulatórias e periciais em Ribeirão Preto e região.",
+      "description": "Engenharia estratégica para operações que não podem parar.",
       "url": "https://dokmosegenharia.com.br",
       "telephone": "+55-16-98137-6199",
       "email": "dokmos.engenharia@gmail.com",
@@ -92,68 +90,14 @@
     }
     </script>
 
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1362520712382496');
-    fbq('track', 'PageView');
-    </script>
-    <!-- End Meta Pixel Code -->
-
     <!-- Facebook Domain Verification -->
     <meta name="facebook-domain-verification" content="dnp831ikogbiuck0p6lf79pvhns1yn" />
 
-    <!-- Meta Pixel Events -->
-    <script>
-    (function(){
-      if(typeof fbq==='undefined')return;
-
-      document.addEventListener('click',function(e){
-        var el=e.target.closest('a,button');
-        if(!el)return;
-        var href=(el.getAttribute('href')||'').toLowerCase();
-        var text=(el.textContent||'').toLowerCase();
-        if(href.indexOf('wa.me/')!==-1||href.indexOf('whatsapp')!==-1||href.indexOf('tel:')!==-1||text.indexOf('whatsapp')!==-1||text.indexOf('ligar')!==-1||text.indexOf('telefone')!==-1){
-          fbq('track','Contact',{content_name:'WhatsApp/Telefone'});
-        }
-      });
-
-      document.addEventListener('submit',function(e){
-        var form=e.target;
-        if(form.tagName!=='FORM')return;
-        var inputs=form.querySelectorAll('input[type="email"],input[type="tel"],input[name*="email"],input[name*="phone"],input[name*="telefone"],textarea');
-        if(inputs.length>0){
-          fbq('track','Lead',{content_name:form.getAttribute('action')||window.location.pathname});
-        }
-      });
-
-      var lastPath=location.pathname;
-      function trackViewContent(){
-        if(location.pathname!==lastPath){
-          lastPath=location.pathname;
-          fbq('track','ViewContent',{content_name:location.pathname,content_type:'product'});
-        }
-      }
-      window.addEventListener('popstate',trackViewContent);
-      var _pushState=history.pushState;
-      history.pushState=function(){_pushState.apply(this,arguments);trackViewContent();};
-      var _replaceState=history.replaceState;
-      history.replaceState=function(){_replaceState.apply(this,arguments);trackViewContent();};
-      setInterval(trackViewContent,1000);
-    })();
-    </script>
-
     <!-- React application entry -->
+    <script type="module" crossorigin src="/assets/index-BBSLj5Y8.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-UxzeldyD.css">
 
     <style>
-      /* Fix mobile Sobre page - DOKMOS ENGENHARIA title separation */
       @media (max-width: 768px) {
         h2.font-bold[style*="transform: translateX"] {
           transform: none !important;
@@ -165,32 +109,23 @@
         }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-BL-LX6Rk.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-UxzeldyD.css">
   </head>
   <body>
     <div id="root"></div>
 
-    <!-- Meta Pixel noscript fallback -->
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1362520712382496&ev=PageView&noscript=1"
     /></noscript>
 
-    <!-- COOKIE BANNER & CONSENT MANAGEMENT -->
     <script src="./cookie-banner.js" defer></script>
 
-    <!-- MOBILE FIX SCRIPT -->
     <script>
-      /* Mobile Sobre page fix: ensures DOKMOS ENGENHARIA title stays centered */
       (function() {
         var isMobile = function() { return window.innerWidth <= 768; };
-        var fixedOnce = false;
-
         function fixSobreTitle() {
           if (!isMobile()) return;
           var video = document.querySelector('video[src*="about-hero"]');
           if (!video) return;
-
           var h2s = document.querySelectorAll('h2.font-bold');
           h2s.forEach(function(el) {
             var st = el.getAttribute('style') || '';
@@ -201,15 +136,10 @@
               el.style.display = 'block';
               el.style.marginLeft = 'auto';
               el.style.marginRight = 'auto';
-              fixedOnce = true;
             }
           });
         }
-
-        var observer = new MutationObserver(function() {
-          fixSobreTitle();
-        });
-
+        var observer = new MutationObserver(fixSobreTitle);
         if (document.body) {
           observer.observe(document.body, { childList: true, subtree: true });
         } else {
