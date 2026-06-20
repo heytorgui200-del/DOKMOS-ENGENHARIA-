@@ -20,5 +20,5 @@ jobs:
           accountId: e901a1e39d39ecc4454d5310660e98e6
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           projectName: dokmosegenharia
-          directory: dist
+          directory: .
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
