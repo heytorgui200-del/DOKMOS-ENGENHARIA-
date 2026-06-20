@@ -42,7 +42,7 @@
     <meta name="twitter:image" content="https://dokmosegenharia.com.br/og-image.jpg" />
 
     <!-- Security Headers (via meta tags for static hosting) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://connect.facebook.net; frame-src 'self' https://www.google.com https://maps.google.com https://www.google.com/maps; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://connect.facebook.net https://formsubmit.co; frame-src 'self' https://www.google.com https://maps.google.com https://www.google.com/maps; base-uri 'self'; form-action 'self';">
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
@@ -54,8 +54,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
     <!-- Preload critical resources -->
-    <link rel="preload" as="image" href="./about_1.jpg" type="image/jpeg" />
-    <link rel="preload" as="video" href="./about-hero.mp4" type="video/mp4" />
+    <link rel="preload" as="image" href="/assets/about_1-CiWmHh9f.jpg" type="image/jpeg" />
+    <link rel="preload" as="video" href="/assets/about-hero-DXN_WWhv.mp4" type="video/mp4" />
 
     <!-- Schema.org JSON-LD (LocalBusiness) -->
     <script type="application/ld+json">
@@ -109,9 +109,6 @@
     fbq('init', '1362520712382496');
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1362520712382496&ev=PageView&noscript=1"
-    /></noscript>
     <!-- End Meta Pixel Code -->
 
     <!-- Facebook Domain Verification -->
@@ -158,8 +155,6 @@
     </script>
 
     <!-- React application entry -->
-    <script type="module" crossorigin src="./assets/index-apQld7ti.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CKxRnr72.css">
 
     <style>
       /* Fix mobile Sobre page - DOKMOS ENGENHARIA title separation */
@@ -174,9 +169,16 @@
         }
       }
     </style>
+    <script type="module" crossorigin src="/assets/index-CqXuHnE0.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DHid-Jyl.css">
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- Meta Pixel noscript fallback -->
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1362520712382496&ev=PageView&noscript=1"
+    /></noscript>
 
     <!-- COOKIE BANNER & CONSENT MANAGEMENT -->
     <script src="./cookie-banner.js" defer></script>
@@ -219,55 +221,6 @@
             observer.observe(document.body, { childList: true, subtree: true });
           });
         }
-
-        setInterval(fixSobreTitle, 200);
-        fixSobreTitle();
-      })();
-    </script>
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-15086467112"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-    <!-- GOOGLE MAPS - SEÇÃO CONTATO (Só aparece em /contatos) -->
-    <div id="google-maps-wrapper" style="display:none; width:100%; max-width:1200px; margin:40px auto; padding:0 20px;">
-      <h2 style="text-align:center; color:#1a365d; font-family:Montserrat,sans-serif; margin-bottom:20px;">Localização</h2>
-      <p style="text-align:center; color:#2d3748; font-family:Inter,sans-serif; margin-bottom:20px;">
-        Avenida Maria de Jesus Condeixa, 655 - Jardim Palma Travassos, Ribeirão Preto - SP
-      </p>
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.0!2d-47.8044!3d-21.1547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDA5JzE2LjkiUyA0N8KwNDgnMTQuNiJX!5e0!3m2!1spt-BR!2sbr!4v1718316000000!5m2!1spt-BR!2sbr" 
-        width="100%" 
-        height="450" 
-        style="border:0; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-    <!-- Script para mostrar mapa SOMENTE em /contatos -->
-    <script>
-      (function() {
-        var mapWrapper = document.getElementById('google-maps-wrapper');
-        if (!mapWrapper) return;
-
-        function checkRoute() {
-          var path = window.location.pathname;
-          if (path === '/contatos') {
-            mapWrapper.style.display = 'block';
-          } else {
-            mapWrapper.style.display = 'none';
-          }
-        }
-
-        // Verifica na carga inicial
-        checkRoute();
-
-        // Escuta mudanças de rota (para SPA)
-        window.addEventListener('popstate', checkRoute);
-        
-        // Verifica periodicamente em caso de navegação programática do React Router
-        setInterval(checkRoute, 500);
       })();
     </script>
   </body>
