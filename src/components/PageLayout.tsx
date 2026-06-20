@@ -318,6 +318,57 @@ function Footer() {
         >
           &copy; 2026 Todos os direitos reservados.
         </p>
+        <div
+          style={{
+            display: "flex",
+            gap: "16px",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}
+        >
+          <a
+            href="/politica-privacidade.html"
+            style={{
+              fontFamily: "'Inter', system-ui, sans-serif",
+              fontSize: "11px",
+              color: "#78716C",
+              textDecoration: "none",
+              transition: "color 0.2s",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#D97706")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#78716C")}
+          >
+            Política de Privacidade
+          </a>
+          <a
+            href="/politica-cookies.html"
+            style={{
+              fontFamily: "'Inter', system-ui, sans-serif",
+              fontSize: "11px",
+              color: "#78716C",
+              textDecoration: "none",
+              transition: "color 0.2s",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#D97706")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#78716C")}
+          >
+            Política de Cookies
+          </a>
+          <a
+            href="/termos-de-servico.html"
+            style={{
+              fontFamily: "'Inter', system-ui, sans-serif",
+              fontSize: "11px",
+              color: "#78716C",
+              textDecoration: "none",
+              transition: "color 0.2s",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#D97706")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#78716C")}
+          >
+            Termos de Serviço
+          </a>
+        </div>
       </div>
     </footer>
   );

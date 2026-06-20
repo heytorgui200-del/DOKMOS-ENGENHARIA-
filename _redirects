@@ -1,6 +1,10 @@
 # Facebook domain verification file
 /dnp831ikogbiuck0p6lf79pvhns1yn.html /dnp831ikogbiuck0p6lf79pvhns1yn.html 200
 
+# Static HTML pages (must be before SPA catch-all)
+/politica-privacidade.html /politica-privacidade.html 200
+/politica-cookies.html /politica-cookies.html 200
+/termos-de-servico.html /termos-de-servico.html 200
+
 # SPA redirects for React Router
-# Redirect all routes to index.html for SPA routing
 /* /index.html 200
