@@ -11,6 +11,13 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    assetsInlineLimit: 0,
+    assetsInlineLimit: 4096,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor': ['react', 'react-dom', 'react-router-dom', 'framer-motion'],
+        }
+      }
+    }
   },
 })

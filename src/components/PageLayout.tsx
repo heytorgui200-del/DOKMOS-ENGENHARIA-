@@ -53,9 +53,11 @@ function Navbar() {
             style={{ textDecoration: "none" }}
           >
             <img
-              src="/logo-dokmos.png"
+              src="/assets/logo-dokmos-64.png"
               alt="DOKMOS ENGENHARIA"
-              style={{ width: "36px", height: "36px", objectFit: "contain" }}
+              width="36"
+              height="36"
+              style={{ objectFit: "contain" }}
             />
             <div className="flex flex-col leading-none">
               <span
@@ -279,9 +281,11 @@ function Footer() {
       >
         <div className="flex items-center gap-2.5">
           <img
-            src="/logo-dokmos.png"
+            src="/assets/logo-dokmos-64.png"
             alt="DOKMOS ENGENHARIA"
-            style={{ width: "28px", height: "28px", objectFit: "contain" }}
+            width="28"
+            height="28"
+            style={{ objectFit: "contain" }}
           />
           <div className="flex flex-col leading-tight">
             <span
