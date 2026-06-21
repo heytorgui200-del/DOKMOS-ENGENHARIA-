@@ -3,8 +3,11 @@
   X-Content-Type-Options: nosniff
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 
+/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
 /assets/*
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=86400, immutable
 
 /*.png
   Cache-Control: public, max-age=604800
