@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -146,116 +147,119 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            key="mobile-menu-overlay"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            style={{
-              position: "fixed",
-              inset: 0,
-              zIndex: 100,
-              background: "rgba(12, 10, 9, 0.98)",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "8px",
-            }}
-          >
-            {/* Close button */}
-            <motion.button
-              initial={{ opacity: 0, rotate: -90 }}
-              animate={{ opacity: 1, rotate: 0 }}
-              exit={{ opacity: 0, rotate: 90 }}
-              transition={{ duration: 0.3 }}
-              onClick={() => setMobileOpen(false)}
-              style={{
-                position: "absolute",
-                top: "16px",
-                right: "20px",
-                width: "44px",
-                height: "44px",
-                borderRadius: "50%",
-                border: "1px solid rgba(255,255,255,0.15)",
-                background: "rgba(255,255,255,0.05)",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <X size={20} color="#FFF" />
-            </motion.button>
-
-            {/* Logo in menu */}
+      {/* Mobile Menu Overlay — Portal outside PageTransition to avoid transform clipping */}
+      {createPortal(
+        <AnimatePresence>
+          {mobileOpen && (
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              className="mb-6"
-            >
-              <img
-                src="/logo-dokmos-white.png"
-                alt="DOKMOS"
-                style={{ width: "48px", height: "48px", objectFit: "contain" }}
-              />
-            </motion.div>
-
-            {navLinks.map((link, i) => {
-              const isActive = location.pathname === link.path;
-              return (
-                <motion.div
-                  key={link.path}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.35, delay: 0.08 * i }}
-                >
-                  <Link
-                    to={link.path}
-                    onClick={() => setMobileOpen(false)}
-                    className="block text-center py-3 px-8"
-                    style={{
-                      fontFamily: "'Inter', system-ui, sans-serif",
-                      fontSize: isActive ? "22px" : "18px",
-                      fontWeight: isActive ? 700 : 500,
-                      color: isActive ? "#F59E0B" : "rgba(255,255,255,0.8)",
-                      textDecoration: "none",
-                      letterSpacing: "0.15em",
-                      textTransform: "uppercase",
-                      borderBottom: isActive ? "2px solid #D97706" : "2px solid transparent",
-                      transition: "all 0.3s ease",
-                    }}
-                  >
-                    {link.label}
-                  </Link>
-                </motion.div>
-              );
-            })}
-
-            {/* Footer text */}
-            <motion.p
+              key="mobile-menu-overlay"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="mt-8"
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
               style={{
-                fontFamily: "'Inter', system-ui, sans-serif",
-                fontSize: "12px",
-                color: "rgba(255,255,255,0.3)",
-                letterSpacing: "0.1em",
+                position: "fixed",
+                inset: 0,
+                zIndex: 100,
+                background: "rgba(12, 10, 9, 0.98)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "8px",
               }}
             >
-              DOKMOS ENGENHARIA LTDA — 2026
-            </motion.p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              {/* Close button */}
+              <motion.button
+                initial={{ opacity: 0, rotate: -90 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: 90 }}
+                transition={{ duration: 0.3 }}
+                onClick={() => setMobileOpen(false)}
+                style={{
+                  position: "absolute",
+                  top: "16px",
+                  right: "20px",
+                  width: "44px",
+                  height: "44px",
+                  borderRadius: "50%",
+                  border: "1px solid rgba(255,255,255,0.15)",
+                  background: "rgba(255,255,255,0.05)",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <X size={20} color="#FFF" />
+              </motion.button>
+
+              {/* Logo in menu */}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="mb-6"
+              >
+                <img
+                  src="/logo-dokmos-white.png"
+                  alt="DOKMOS"
+                  style={{ width: "48px", height: "48px", objectFit: "contain" }}
+                />
+              </motion.div>
+
+              {navLinks.map((link, i) => {
+                const isActive = location.pathname === link.path;
+                return (
+                  <motion.div
+                    key={link.path}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.35, delay: 0.08 * i }}
+                  >
+                    <Link
+                      to={link.path}
+                      onClick={() => setMobileOpen(false)}
+                      className="block text-center py-3 px-8"
+                      style={{
+                        fontFamily: "'Inter', system-ui, sans-serif",
+                        fontSize: isActive ? "22px" : "18px",
+                        fontWeight: isActive ? 700 : 500,
+                        color: isActive ? "#F59E0B" : "rgba(255,255,255,0.8)",
+                        textDecoration: "none",
+                        letterSpacing: "0.15em",
+                        textTransform: "uppercase",
+                        borderBottom: isActive ? "2px solid #D97706" : "2px solid transparent",
+                        transition: "all 0.3s ease",
+                      }}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                );
+              })}
+
+              {/* Footer text */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="mt-8"
+                style={{
+                  fontFamily: "'Inter', system-ui, sans-serif",
+                  fontSize: "12px",
+                  color: "rgba(255,255,255,0.3)",
+                  letterSpacing: "0.1em",
+                }}
+              >
+                DOKMOS ENGENHARIA LTDA — 2026
+              </motion.p>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </>
   );
 }
